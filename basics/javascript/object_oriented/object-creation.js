@@ -29,6 +29,7 @@ function Person(name,age){
     this.printDetails=function (){
         console.log("Name of the person is "+this.name+" and age is "+this.age);
     };
+  console.log(this);
 }
 
 //Out of all approaches , constructor function is the best approach.
@@ -38,5 +39,9 @@ person.printDetails();
 person2.printDetails();
 person3.printDetails();
 new Person("Abraham",21).printDetails();
-
+//Below example direclty binds the values and printDetails function to global object of node. 
+//In case of javascript running in browser, it will bind to window object.
+//This due to directly invoking function rather than calling as constructor function using new keyword.
+Person("Jhon",47);
+global.printDetails();
 
