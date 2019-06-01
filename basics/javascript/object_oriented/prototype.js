@@ -2,6 +2,7 @@
 Below literal notation way of creating javascript object will not have direct access to it's prototype object.
 However, In some javascript engines such as chrome(v8 engine) has exposed some way to read prototype of 
 literal notation object(using __proto__ variable/property). 
+But using Object generic method Object.getPrototypeOf(object) , we can get prototype of object.
 By default,All these literal Object types will inherit Object.prototype object as there prototype. 
 */
 var person1={
@@ -10,6 +11,7 @@ var person1={
 }
 //console.log(person.prototype); // this line will print undefined
 console.log(person1.__proto__ == Object.prototype);
+console.log(Object.getPrototypeOf(person1) == Object.prototype);
 var person2={
     name:"Dennis Ritchie",
     age:24
