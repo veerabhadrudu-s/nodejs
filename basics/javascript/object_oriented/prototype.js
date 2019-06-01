@@ -32,7 +32,7 @@ function Person(name,age){
     this.name=name;
     this.age=age;
 }
-
+console.log(Person.prototype == Object.prototype);
 Person.prototype.greet=function(){
     console.log("Greeting's "+this.name);
 }
