@@ -9,7 +9,7 @@ var person1={
     age:31
 }
 //console.log(person.prototype); // this line will print undefined
-console.log(typeof person1.__proto__);
+console.log(person1.__proto__ == Object.prototype);
 var person2={
     name:"Dennis Ritchie",
     age:24
