@@ -4,7 +4,8 @@
   "description": "Node JS Practice Project",
   "main": "hello-world-express.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jslint": "^0.12.1"
   },
   "devDependencies": {},
   "scripts": {
