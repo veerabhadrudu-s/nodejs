@@ -6,7 +6,7 @@ This is because due to race condition between setImmediate(with function A call 
 But Remaining Immediate call backs will be executed in same order in which they are defined. Even though they are executed in same order but these call backs are executed in different event loop iteration's i.e. fun-A is executed in 1st check phase of event loop iteration. 
 fun-B and fun-C are executed in 2nd check phase of event loop iteration.
 fun-D,fun-E,fun-F and fun-G are executed in 3rd check phase of event loop iteration.
-This different iteration loops is due to, setImmediate call backs are always executed in the check Phase of event loop. But setImmediate created inside callbacks of setImmediate callbacks will be executed in next check phase of event loop and this chaining goes on.
+This different iteration loops is due to, setImmediate call backs are always executed in the check Phase of event loop. But setImmediate created inside callbacks of setImmediate callbacks will be executed in next check phase of event loop and this chaining goes on.For more info on this checkout nodejs documentation - https://nodejs.org/dist/latest-v12.x/docs/api/timers.html#timers_setimmediate_callback_args
  */
 setImmediate(function A() {
     console.log(1);
