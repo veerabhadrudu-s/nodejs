@@ -13,7 +13,7 @@ function serveFileUsingStream(filePath, response) {
       let isWritecompleted = response.write(fileContent);
       console.debug(`Is Write completed for ${filePath} - ${isWritecompleted}`);
       if (!isWritecompleted) {
-        //To see this warn message add more random text content in any file.
+        //To see this warn message add more random text content in any serving file.
         console.warn(`Hold on write operation for file ${filePath} is not completed !!!`);
         rs.pause();
       }
