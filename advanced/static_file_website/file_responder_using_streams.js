@@ -2,15 +2,13 @@ const fs = require('fs');
 
 function serveFileUsingStream(filePath, response) {
 
-  const rs = fs.createReadStream(filePath);
-  let fileContent = '';
-
+  const rs = fs.createReadStream(filePath); 
   rs.on('readable', () => {
     // Write using buffer length not working. 
     //let dataReadFromStream = rs.read(1000);
     let dataReadFromStream = rs.read();
     if (dataReadFromStream != null) {
-      fileContent = dataReadFromStream instanceof Buffer ? dataReadFromStream.toString() : typeof dataReadFromStream == 'string' ? dataReadFromStream : dataReadFromStream.toString();
+      let fileContent = dataReadFromStream instanceof Buffer ? dataReadFromStream.toString() : typeof dataReadFromStream == 'string' ? dataReadFromStream : dataReadFromStream.toString();
       //console.trace(`Writing buffer content ${fileContent} of file ${filePath}`);
       let isWritecompleted = response.write(fileContent);
       console.debug(`Is Write completed for ${filePath} - ${isWritecompleted}`);
