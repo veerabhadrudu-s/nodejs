@@ -38,7 +38,7 @@ describe(`Testing asyncronous call's`, function () {
         //Mocha Context timeout function. 
         this.timeout(5000);
         let mocha=require('mocha');
-        console.log(`Is this in this anonymous function is Mocha Context - ${this instanceof mocha.Context}`);
+        console.log(`Is "this pointing object" in this anonymous function is Mocha Context - ${this instanceof mocha.Context}`);
         return new Promise(function (resolve, reject) {
             //Asyncronous code
             setTimeout(() => { resolve("Passing test case"); }, 3000);
