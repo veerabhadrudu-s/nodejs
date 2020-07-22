@@ -4,13 +4,13 @@
 
     this.name = name;
     this.age = age;
-    this.profession = profession;
+    this.profession = profession;  
+}
 
-    this.printEmployeeDetails = function () {
-        console.log(`Employee with name ${this.name} has age ${this.age} and his profession is ${this.profession} `);
-    }
-
-} */
+Employee.prototype.printEmployeeDetails = function () {
+    console.log(`Employee with name ${this.name} has age ${this.age} and his profession is ${this.profession} `);
+};
+ */
 
 class Employee {
     constructor(name, age, profession) {
