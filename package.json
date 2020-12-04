@@ -6,11 +6,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "jslint": "^0.12.1",
-    "mime-types": "^2.1.24"
+    "mime-types": "^2.1.27"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "mocha": "^8.0.1"
   },
   "scripts": {
     "test": "mocha",
