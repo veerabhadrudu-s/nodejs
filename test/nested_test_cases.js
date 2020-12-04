@@ -1,6 +1,7 @@
 /* 
     This is an example of nested testcases using mocha
 */
+console.log("Log before definition of top describe");
 
 describe("Top level describe", function () {
 
@@ -45,6 +46,8 @@ describe("Top level describe", function () {
 
         });
     });
+
+    console.log("top level describe MIDDLE statement ");
 
     describe("1st Level describe", function () {
 
@@ -134,6 +137,34 @@ describe("Top level describe", function () {
 
     });
 
+    describe("1st Level sibling describe", function () {
+
+        console.log("1st Level sibling describe statement");
+
+        before("1st Level sibling before", function () {
+            console.log("1st Level sibling describe before statement");
+        });
+
+        beforeEach("1st Level sibling before each", function () {
+            console.log("1st Level sibling before each statement");
+        });
+
+        it("1st Level sibling it", function () {
+            console.log("1st Level sibling it statement");
+        });
+
+        after("1st Level sibling after", function () {
+            console.log("1st Level sibling after statement");
+        });
+
+        afterEach("1st Level sibling after each", function () {
+            console.log("1st Level sibling after each statement");
+        });
+
+        console.log("1st Level sibling describe end statement");
+
+    });
+
     after("Top level after", function () {
         console.log("Top level after statement");
     });
@@ -145,3 +176,16 @@ describe("Top level describe", function () {
     console.log("Top level describe end statement");
 
 });
+
+console.log("Log after definition of top describe");
+
+
+describe('Another top describe',function(){
+    console.log('Another describe');
+
+    it('Another top describe it',function(){
+        console.log('Another top describe it statement')
+    });
+
+    console.log('Another describe end statement');
+})
